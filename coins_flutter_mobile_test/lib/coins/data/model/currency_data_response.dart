@@ -14,7 +14,7 @@ class CurrencyDataResponse {
     cotation = json['cotation'];
     symbol = json['symbol'];
     imageUrl = json['image_url'];
-    details = json['details'];
+    details = CoinDetailsResponse.fromJson(json['details']);
   }
 
   late final String currencyName;
