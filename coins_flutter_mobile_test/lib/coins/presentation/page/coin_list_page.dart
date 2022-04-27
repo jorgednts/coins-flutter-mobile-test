@@ -1,3 +1,4 @@
+import 'package:coins_flutter_mobile_test/coins/common/coins_constants_colors.dart';
 import 'package:flutter/material.dart';
 
 import '../../data/data_source/coins_data_source.dart';
@@ -6,6 +7,7 @@ import '../../data/repository/coin_repository_impl.dart';
 import '../../domain/repository/coin_repository.dart';
 import '../../domain/use_case/get_coin_use_case.dart';
 import '../../domain/use_case/get_coin_use_case_impl.dart';
+import '../common/coin_list_widget.dart';
 import '../controller/coin_list_controller.dart';
 import '../state/coin_list_state.dart';
 
@@ -33,15 +35,16 @@ class _CoinListPageState extends State<CoinListPage> {
   }
 
   @override
-  Widget build(BuildContext context) => Container(
-        child: ValueListenableBuilder<CoinListState>(
+  Widget build(BuildContext context) => Scaffold(
+        backgroundColor: CoinsConstantsColors.scaffoldBackground,
+        body: ValueListenableBuilder<CoinListState>(
           valueListenable: controller,
           builder: (context, state, _) {
             switch (state) {
               case CoinListState.loading:
                 return const CircularProgressIndicator();
               case CoinListState.success:
-                return const Text('sucesso');
+                return CoinListWidget(controller: controller);
               case CoinListState.genericError:
                 return const Text('erro');
             }
