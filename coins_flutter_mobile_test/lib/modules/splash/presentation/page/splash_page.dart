@@ -12,12 +12,12 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
-  final SplashController control = SplashController();
+  final SplashController splashController = SplashController();
 
   @override
   void initState() {
     super.initState();
-    control.goToLoginPage(context);
+    splashController.goToLoginModule(context);
   }
 
   @override
