@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../common/coins_constants_colors.dart';
+import '../../../common/coins_constants_colors.dart';
 import '../../domain/model/currency_data_model.dart';
 
 class CoinDetailsPage extends StatelessWidget {

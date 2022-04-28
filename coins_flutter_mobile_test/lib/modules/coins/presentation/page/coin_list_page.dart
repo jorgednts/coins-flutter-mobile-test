@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../common/coins_constants_colors.dart';
+import '../../../common/coins_constants_colors.dart';
 import '../../data/data_source/coins_data_source.dart';
 import '../../data/data_source/coins_data_source_impl.dart';
 import '../../data/repository/coin_repository_impl.dart';
