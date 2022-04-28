@@ -10,6 +10,6 @@ class CoinModel {
 
   final String message;
   final String walletId;
-  final String userBalance;
+  String userBalance;
   final List<CurrencyDataModel>? data;
 }

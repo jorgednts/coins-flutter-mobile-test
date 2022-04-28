@@ -39,7 +39,7 @@ class BalanceCardWidget extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(left: 25),
               child: Text(
-                formatBalance(controller.coin!.userBalance),
+                controller.coin!.userBalance,
                 style: const TextStyle(fontSize: 30),
               ),
             ),
@@ -49,6 +49,5 @@ class BalanceCardWidget extends StatelessWidget {
     ),
   );
 
-  String formatBalance(String text) =>
-      'R\$ ${double.parse(text).toStringAsFixed(2).replaceAll('.', ',')}';
+
 }
