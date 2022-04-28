@@ -11,5 +11,5 @@ class CoinModel {
   final String message;
   final String walletId;
   String userBalance;
-  final List<CurrencyDataModel>? data;
+  final List<CurrencyDataModel> data;
 }

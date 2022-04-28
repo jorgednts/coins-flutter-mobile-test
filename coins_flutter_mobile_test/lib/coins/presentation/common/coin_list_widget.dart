@@ -1,3 +1,4 @@
+import 'package:coins_flutter_mobile_test/coins/presentation/common/cryptocurrency_list_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../../common/coins_constants_colors.dart';
@@ -41,6 +42,7 @@ class CoinListWidget extends StatelessWidget {
                 ),
                 BalanceCardWidget(controller: controller),
                 WalletIdWidget(controller: controller),
+                CryptocurrencyListWidget(coin: controller.coin),
               ],
             ),
           ),

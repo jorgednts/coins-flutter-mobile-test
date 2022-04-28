@@ -11,7 +11,7 @@ class CoinListController extends ValueNotifier<CoinListState> {
         super(CoinListState.loading);
 
   final GetCoinUseCase _getCoinUseCase;
-  CoinModel? coin;
+  late CoinModel coin;
 
   Future<void> getCoin() async {
     value = CoinListState.loading;

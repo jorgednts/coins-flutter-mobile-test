@@ -32,14 +32,15 @@ class WalletIdWidget extends StatelessWidget {
                     'Id da Carteira:',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
+                      fontSize: 13,
                     ),
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 25, bottom: 10),
                   child: Text(
-                    controller.coin!.walletId,
-                    style: const TextStyle(fontSize: 30),
+                    controller.coin.walletId,
+                    style: const TextStyle(fontSize: 20),
                   ),
                 ),
               ],

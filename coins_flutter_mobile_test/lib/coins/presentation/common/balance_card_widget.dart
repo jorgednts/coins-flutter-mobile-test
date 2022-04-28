@@ -33,13 +33,14 @@ class BalanceCardWidget extends StatelessWidget {
                 'Saldo Disponível:',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
+                  fontSize: 13,
                 ),
               ),
             ),
             Padding(
               padding: const EdgeInsets.only(left: 25),
               child: Text(
-                controller.coin!.userBalance,
+                controller.coin.userBalance,
                 style: const TextStyle(fontSize: 30),
               ),
             ),
