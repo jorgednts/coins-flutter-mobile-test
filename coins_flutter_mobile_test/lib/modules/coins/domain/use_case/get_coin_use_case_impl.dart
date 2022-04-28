@@ -9,17 +9,24 @@ class GetCoinUseCaseImpl implements GetCoinUseCase {
 
   final CoinRepository _coinRepository;
 
-  CoinModel formatUserBalance(CoinModel coinModel) {
+  CoinModel formatNumbers(CoinModel coinModel) {
     final formattedUserBalance =
-        'R\$ ${double.parse(coinModel.userBalance).toStringAsFixed(2).
-    replaceAll('.', ',')}';
+        '\$ ${double.parse(coinModel.userBalance).toStringAsFixed(2)
+        .replaceAll('.', ',')}';
     coinModel.userBalance = formattedUserBalance;
+
+    for (final data in coinModel.data) {
+      final formattedCotation =
+          '\$ ${double.parse(data.cotation).toString().replaceAll('.', ',')}';
+      data.cotation = formattedCotation;
+    }
+
     return coinModel;
   }
 
   @override
   Future<CoinModel> call() async {
     final coinModel = await _coinRepository.getCoin();
-    return formatUserBalance(coinModel);
+    return formatNumbers(coinModel);
   }
 }

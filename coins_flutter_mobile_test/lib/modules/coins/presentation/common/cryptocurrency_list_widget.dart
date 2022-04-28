@@ -52,7 +52,7 @@ class CryptocurrencyListWidget extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                                 builder: (context) => CoinDetailsPage(
-                                      currencyDataModel: coin.data[index],
+                                      cryptocurrency: coin.data[index],
                                     )));
                       },
                       child: Card(
@@ -81,7 +81,6 @@ class CryptocurrencyListWidget extends StatelessWidget {
                                   coin.data[index].imageUrl,
                                   height: MediaQuery.of(context).size.height,
                                   width: MediaQuery.of(context).size.width,
-                                  // fit: BoxFit.fill,
                                   loadingBuilder:
                                       (context, child, loadingProgress) {
                                     if (loadingProgress == null) {

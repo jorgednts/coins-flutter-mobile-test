@@ -10,7 +10,7 @@ class CurrencyDataModel {
   });
 
   final String currencyName;
-  final String cotation;
+  late String cotation;
   final String symbol;
   final String imageUrl;
   final CoinDetailsModel details;

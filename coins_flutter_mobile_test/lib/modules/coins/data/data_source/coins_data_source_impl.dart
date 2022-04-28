@@ -11,7 +11,7 @@ class CoinsDataSourceImpl implements CoinsDataSource {
   @override
   Future<CoinModel> getCoin() async {
     final response = await rootBundle
-        .loadString('lib/coins/data/data_source/criptomoedas.json');
+        .loadString('lib/modules/coins/data/data_source/criptomoedas.json');
     final data = await json.decode(response);
     final coinResponse = CoinResponse.fromJson(data);
     return coinResponse.toCoinModel();

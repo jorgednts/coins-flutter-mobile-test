@@ -5,5 +5,5 @@ class CoinDetailsModel {
   });
 
   final String about;
-  final double fee;
+  late double fee;
 }

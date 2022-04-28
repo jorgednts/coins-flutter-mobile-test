@@ -1,9 +1,9 @@
-import 'package:coins_flutter_mobile_test/coins/presentation/common/cryptocurrency_list_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../../common/coins_constants_colors.dart';
 import '../controller/coin_list_controller.dart';
 import 'balance_card_widget.dart';
+import 'cryptocurrency_list_widget.dart';
 import 'wallet_id_widget.dart';
 
 class CoinListWidget extends StatelessWidget {
