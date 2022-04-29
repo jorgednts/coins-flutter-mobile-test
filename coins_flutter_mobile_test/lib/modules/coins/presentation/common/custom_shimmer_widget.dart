@@ -13,7 +13,7 @@ class CustomShimmerWidget extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(bottom: 15),
               child: Container(
-                margin: const EdgeInsets.symmetric(horizontal: 50),
+                margin: const EdgeInsets.symmetric(horizontal: 80),
                 height: 50,
                 width: MediaQuery.of(context).size.width,
                 child: Card(
