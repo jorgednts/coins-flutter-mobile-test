@@ -6,7 +6,7 @@ class CustomShimmerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Shimmer.fromColors(
-        baseColor: Colors.white24,
+        baseColor: Colors.white12,
         highlightColor: Colors.white,
         child: Column(
           children: [
