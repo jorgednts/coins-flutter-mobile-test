@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../common/coins_constants_colors.dart';
 import '../../domain/model/currency_model.dart';
 import '../common/custom_about_info_widget.dart';
-import '../common/custom_detail_text_widget.dart';
+import '../common/custom_currency_details_page_card_widget.dart';
 
 class CoinDetailsPage extends StatelessWidget {
   const CoinDetailsPage({
@@ -28,62 +28,7 @@ class CoinDetailsPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 80),
-                    height: 120,
-                    width: MediaQuery.of(context).size.width,
-                    child: Card(
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Expanded(
-                            child: Padding(
-                              padding: const EdgeInsets.only(
-                                  top: 10, bottom: 10, left: 20),
-                              child: Container(
-                                height: 100,
-                                child: Image.network(
-                                  currency.imageUrl,
-                                  loadingBuilder:
-                                      (context, child, loadingProgress) {
-                                    if (loadingProgress == null) {
-                                      return child;
-                                    }
-                                    return const Center(
-                                      child: CircularProgressIndicator(
-                                        color: Colors.white,
-                                      ),
-                                    );
-                                  },
-                                ),
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                            child: Padding(
-                              padding:
-                                  const EdgeInsets.only(top: 20, bottom: 10),
-                              child: Column(
-                                children: [
-                                  CustomDetailTextWidget(
-                                      detailText: currency.symbol,
-                                      textColor:
-                                          CoinsConstantsColors.primaryColor),
-                                  CustomDetailTextWidget(
-                                      detailText: currency.cotation,
-                                      textColor: Colors.green),
-                                  CustomDetailTextWidget(
-                                      detailText:
-                                          currency.details.fee.toString(),
-                                      textColor: Colors.green),
-                                ],
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
+                  CustomCurrencyDetailsPageCardWidget(currency: currency),
                   CustomAboutInfoWidget(
                     detailsPageAboutText: detailsPageAboutText,
                     aboutText: currency.details.about,
