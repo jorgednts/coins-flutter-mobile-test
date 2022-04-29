@@ -12,9 +12,9 @@ class CustomDetailTextWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Expanded(
-    child: Text(
-      detailText,
-      style: const TextStyle(color: Colors.green),
-    ),
-  );
+        child: Text(
+          detailText,
+          style: TextStyle(color: textColor),
+        ),
+      );
 }
