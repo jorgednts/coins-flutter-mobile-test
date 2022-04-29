@@ -14,6 +14,8 @@ class CoinListController extends ValueNotifier<CoinListState> {
   late WalletModel coin;
 
   Future<void> getCoin() async {
+    await Future.delayed(
+        const Duration(seconds: 2));
     value = CoinListState.loading;
     try {
       coin = await _getCoinUseCase.call();
