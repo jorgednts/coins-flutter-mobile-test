@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../coins/presentation/page/coin_list_page.dart';
 import '../../../common/coins_constants_colors.dart';
 import '../../constants/login_page_image_constants.dart';
+import '../../constants/login_page_string_constants.dart';
 import '../../domain/model/user_model.dart';
 import '../../domain/use_case/verify_login_use_case.dart';
 import '../common/custom_text_field_widget.dart';
@@ -38,20 +39,16 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   @override
-  Widget build(BuildContext context) =>
-      Scaffold(
+  Widget build(BuildContext context) => Scaffold(
         body: Container(
-          height: MediaQuery
-              .of(context)
-              .size
-              .height,
+          height: MediaQuery.of(context).size.height,
           color: CoinsConstantsColors.primaryColor,
           child: SingleChildScrollView(
             child: Center(
               child: Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(top: 150, bottom: 20),
+                    padding: const EdgeInsets.only(top: 250, bottom: 20),
                     child: Image.asset(
                       LoginPageImageConstants.coinsLoginLogo,
                       width: 150,
@@ -72,7 +69,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         CustomTextFieldWidget(
                           textEditingController: userEmail,
-                          hintText: 'e-mail',
+                          hintText: LoginPageStringConstants.textFieldEmail,
                         ),
                       ],
                     ),
@@ -93,7 +90,7 @@ class _LoginPageState extends State<LoginPage> {
                         CustomTextFieldWidget(
                           obscureText: true,
                           textEditingController: userPassword,
-                          hintText: 'senha',
+                          hintText: LoginPageStringConstants.textFieldPassword,
                         ),
                       ],
                     ),
@@ -115,7 +112,7 @@ class _LoginPageState extends State<LoginPage> {
                           loginPageController.doLogin(user);
                         },
                         child: const Text(
-                          'ENTRAR',
+                          LoginPageStringConstants.elevatedButtonLogin,
                           style: TextStyle(fontSize: 18),
                         ),
                       ),
@@ -129,22 +126,26 @@ class _LoginPageState extends State<LoginPage> {
                           switch (state) {
                             case LoginPageState.initialState:
                               return const InfoTextWidget(
-                                infoText: 'Bem-vind@!',
+                                infoText:
+                                    LoginPageStringConstants.infoTextInitState,
                               );
                             case LoginPageState.credentialError:
                               return const InfoTextWidget(
-                                infoText:
-                                'Credenciais Inválidas, tente novamente!',
+                                infoText: LoginPageStringConstants
+                                    .infoTextCredentialError,
                               );
                             case LoginPageState.successLogin:
                               return const InfoTextWidget(
-                                  infoText: 'Login realizado com sucesso!');
+                                  infoText: LoginPageStringConstants
+                                      .infoTextSuccessfulLogin);
                             case LoginPageState.loading:
                               return const InfoTextWidget(
-                                  infoText: 'Carregando...');
+                                  infoText:
+                                      LoginPageStringConstants.infoTextLoading);
                             case LoginPageState.emptyCredential:
                               return const InfoTextWidget(
-                                  infoText: 'Preencha todos os campos!');
+                                  infoText: LoginPageStringConstants
+                                      .infoTextEmptyCredential);
                           }
                         }),
                   )
