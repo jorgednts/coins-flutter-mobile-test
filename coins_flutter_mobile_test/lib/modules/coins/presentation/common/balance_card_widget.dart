@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 
-import '../controller/coin_list_controller.dart';
-
 class BalanceCardWidget extends StatelessWidget {
   const BalanceCardWidget({
-    required this.controller,
+    required this.userBalance,
     Key? key,
   }) : super(key: key);
 
-  final CoinListController controller;
+  final String userBalance;
 
   @override
   Widget build(BuildContext context) => Padding(
@@ -35,7 +33,7 @@ class BalanceCardWidget extends StatelessWidget {
                       'Saldo Disponível:',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                       // fontSize: 13,
+                        // fontSize: 13,
                       ),
                     ),
                   ),
@@ -46,7 +44,7 @@ class BalanceCardWidget extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 25),
                     child: Container(
                       child: Text(
-                        controller.coin.userBalance,
+                        userBalance,
                         style: const TextStyle(fontSize: 30),
                       ),
                     ),

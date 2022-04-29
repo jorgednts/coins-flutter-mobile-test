@@ -1,5 +1,5 @@
-import '../model/coin_model.dart';
+import '../model/wallet_model.dart';
 
 mixin CoinRepository {
-Future<CoinModel> getCoin();
+Future<WalletModel> getCoin();
 }

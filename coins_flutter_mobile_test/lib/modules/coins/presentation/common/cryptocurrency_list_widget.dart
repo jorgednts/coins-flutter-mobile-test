@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
 import '../../../common/coins_constants_colors.dart';
-import '../../domain/model/coin_model.dart';
+import '../../domain/model/currency_model.dart';
 import '../page/coin_details_page.dart';
 
 class CryptocurrencyListWidget extends StatelessWidget {
   const CryptocurrencyListWidget({
-    required this.coin,
+    required this.currencyList,
     Key? key,
   }) : super(key: key);
 
-  final CoinModel coin;
+  final List<CurrencyModel> currencyList;
 
   @override
   Widget build(BuildContext context) => Padding(
@@ -41,7 +41,7 @@ class CryptocurrencyListWidget extends StatelessWidget {
                   padding: const EdgeInsets.all(10),
                   shrinkWrap: true,
                   physics: const ScrollPhysics(),
-                  itemCount: coin.data.length,
+                  itemCount: currencyList.length,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisSpacing: 20, crossAxisCount: 3),
                   itemBuilder: (context, index) => Container(
@@ -52,7 +52,7 @@ class CryptocurrencyListWidget extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                                 builder: (context) => CoinDetailsPage(
-                                      cryptocurrency: coin.data[index],
+                                      currency: currencyList[index],
                                     )));
                       },
                       child: Card(
@@ -65,7 +65,7 @@ class CryptocurrencyListWidget extends StatelessWidget {
                               child: Padding(
                                 padding: const EdgeInsets.only(left: 5, top: 5),
                                 child: Text(
-                                  coin.data[index].symbol,
+                                  currencyList[index].symbol,
                                   style: const TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold,
@@ -78,7 +78,7 @@ class CryptocurrencyListWidget extends StatelessWidget {
                               child: Padding(
                                 padding: const EdgeInsets.all(10),
                                 child: Image.network(
-                                  coin.data[index].imageUrl,
+                                  currencyList[index].imageUrl,
                                   height: MediaQuery.of(context).size.height,
                                   width: MediaQuery.of(context).size.width,
                                   loadingBuilder:

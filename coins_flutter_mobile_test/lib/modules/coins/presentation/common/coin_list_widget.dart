@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
 import '../../../common/coins_constants_colors.dart';
-import '../controller/coin_list_controller.dart';
+import '../../domain/model/wallet_model.dart';
 import 'balance_card_widget.dart';
 import 'cryptocurrency_list_widget.dart';
 import 'wallet_id_widget.dart';
 
 class CoinListWidget extends StatelessWidget {
   const CoinListWidget({
-    required this.controller,
+    required this.wallet,
     Key? key,
   }) : super(key: key);
 
-  final CoinListController controller;
+  final WalletModel wallet;
 
   @override
   Widget build(BuildContext context) => SingleChildScrollView(
@@ -40,9 +40,9 @@ class CoinListWidget extends StatelessWidget {
                     )
                   ],
                 ),
-                BalanceCardWidget(controller: controller),
-                WalletIdWidget(controller: controller),
-                CryptocurrencyListWidget(coin: controller.coin),
+                BalanceCardWidget(userBalance: wallet.userBalance),
+                WalletIdWidget(walletId: wallet.walletId),
+                CryptocurrencyListWidget(currencyList: wallet.data),
               ],
             ),
           ),

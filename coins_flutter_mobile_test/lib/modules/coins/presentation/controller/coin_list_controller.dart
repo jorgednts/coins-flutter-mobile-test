@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../domain/model/coin_model.dart';
+import '../../domain/model/wallet_model.dart';
 import '../../domain/use_case/get_coin_use_case.dart';
 import '../state/coin_list_state.dart';
 
@@ -11,7 +11,7 @@ class CoinListController extends ValueNotifier<CoinListState> {
         super(CoinListState.loading);
 
   final GetCoinUseCase _getCoinUseCase;
-  late CoinModel coin;
+  late WalletModel coin;
 
   Future<void> getCoin() async {
     value = CoinListState.loading;

@@ -22,7 +22,7 @@ class _CoinListPageState extends State<CoinListPage> {
   late CoinsDataSource coinsDataSource;
   late CoinRepository coinRepository;
   late GetCoinUseCase getCoinUseCase;
-  late CoinListController controller;
+  late CoinListController coinListController;
 
   @override
   void initState() {
@@ -30,21 +30,21 @@ class _CoinListPageState extends State<CoinListPage> {
     coinsDataSource = CoinsDataSourceImpl();
     coinRepository = CoinRepositoryImpl(coinsDataSource: coinsDataSource);
     getCoinUseCase = GetCoinUseCaseImpl(coinRepository: coinRepository);
-    controller = CoinListController(getCoinUseCase: getCoinUseCase);
-    controller.getCoin();
+    coinListController = CoinListController(getCoinUseCase: getCoinUseCase);
+    coinListController.getCoin();
   }
 
   @override
   Widget build(BuildContext context) => Scaffold(
         backgroundColor: CoinsConstantsColors.scaffoldBackground,
         body: ValueListenableBuilder<CoinListState>(
-          valueListenable: controller,
+          valueListenable: coinListController,
           builder: (context, state, _) {
             switch (state) {
               case CoinListState.loading:
                 return const CircularProgressIndicator();
               case CoinListState.success:
-                return CoinListWidget(controller: controller);
+                return CoinListWidget(wallet: coinListController.coin);
               case CoinListState.genericError:
                 return const Text('erro');
             }

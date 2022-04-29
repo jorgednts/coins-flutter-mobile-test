@@ -1,5 +1,5 @@
-import '../../domain/model/coin_model.dart';
+import '../../domain/model/wallet_model.dart';
 
 mixin CoinsDataSource {
-  Future<CoinModel> getCoin();
+  Future<WalletModel> getCoin();
 }

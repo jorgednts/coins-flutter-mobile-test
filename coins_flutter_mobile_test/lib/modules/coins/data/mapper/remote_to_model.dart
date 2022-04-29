@@ -1,21 +1,21 @@
-import '../../domain/model/coin_details_model.dart';
-import '../../domain/model/coin_model.dart';
-import '../../domain/model/currency_data_model.dart';
-import '../model/coin_response.dart';
+import '../../domain/model/currency_details_model.dart';
+import '../../domain/model/currency_model.dart';
+import '../../domain/model/wallet_model.dart';
+import '../model/wallet_response.dart';
 
-extension CoinResponseToCoinModel on CoinResponse {
-  CoinModel toCoinModel() => CoinModel(
+extension CoinResponseToCoinModel on WalletResponse {
+  WalletModel toCoinModel() => WalletModel(
         message: message,
         walletId: walletId,
         userBalance: userBalance,
         data: data
             .map(
-              (item) => CurrencyDataModel(
+              (item) => CurrencyModel(
                 currencyName: item.currencyName,
                 cotation: item.cotation,
                 symbol: item.symbol,
                 imageUrl: item.imageUrl,
-                details: CoinDetailsModel(
+                details: CurrencyDetailsModel(
                   about: item.details.about,
                   fee: item.details.fee,
                 ),

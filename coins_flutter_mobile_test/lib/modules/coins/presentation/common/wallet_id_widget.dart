@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 
-import '../controller/coin_list_controller.dart';
-
 class WalletIdWidget extends StatelessWidget {
   const WalletIdWidget({
-    required this.controller,
+    required this.walletId,
     Key? key,
   }) : super(key: key);
 
-  final CoinListController controller;
+  final String walletId;
 
   @override
   Widget build(BuildContext context) => Padding(
@@ -39,7 +37,7 @@ class WalletIdWidget extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(left: 25, bottom: 10),
                   child: Text(
-                    controller.coin.walletId,
+                    walletId,
                     style: const TextStyle(fontSize: 20),
                   ),
                 ),

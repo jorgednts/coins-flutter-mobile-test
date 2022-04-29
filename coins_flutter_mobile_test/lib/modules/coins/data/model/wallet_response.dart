@@ -1,21 +1,21 @@
-import 'currency_data_response.dart';
+import 'currency_response.dart';
 
-class CoinResponse {
-  CoinResponse({
+class WalletResponse {
+  WalletResponse({
     required this.message,
     required this.walletId,
     required this.userBalance,
     required this.data,
   });
 
-  CoinResponse.fromJson(Map<String, dynamic> json) {
+  WalletResponse.fromJson(Map<String, dynamic> json) {
     message = json['message'];
     walletId = json['wallet_id'];
     userBalance = json['user_balance'];
     if (json['data'] != null) {
-      data = <CurrencyDataResponse>[];
+      data = <CurrencyResponse>[];
       json['data'].forEach((item) {
-        data.add(CurrencyDataResponse.fromJson(item));
+        data.add(CurrencyResponse.fromJson(item));
       });
     }
   }
@@ -23,7 +23,7 @@ class CoinResponse {
   late final String message;
   late final String walletId;
   late final String userBalance;
-  late final List<CurrencyDataResponse> data;
+  late final List<CurrencyResponse> data;
 
   Map<String, dynamic> toJson() {
     final data = <String, dynamic>{};

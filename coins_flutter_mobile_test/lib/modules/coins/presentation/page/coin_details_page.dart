@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
 import '../../../common/coins_constants_colors.dart';
-import '../../domain/model/currency_data_model.dart';
+import '../../domain/model/currency_model.dart';
 
 class CoinDetailsPage extends StatelessWidget {
   const CoinDetailsPage({
-    required this.cryptocurrency,
+    required this.currency,
     Key? key,
   }) : super(key: key);
 
-  final CurrencyDataModel cryptocurrency;
+  final CurrencyModel currency;
 
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: Text(cryptocurrency.currencyName.toUpperCase()),
+          title: Text(currency.currencyName.toUpperCase()),
           backgroundColor: CoinsConstantsColors.primaryColor,
         ),
         backgroundColor: CoinsConstantsColors.scaffoldBackground,
@@ -40,7 +40,7 @@ class CoinDetailsPage extends StatelessWidget {
                               child: Container(
                                 height: 100,
                                 child: Image.network(
-                                  cryptocurrency.imageUrl,
+                                  currency.imageUrl,
                                   loadingBuilder:
                                       (context, child, loadingProgress) {
                                     if (loadingProgress == null) {
@@ -64,7 +64,7 @@ class CoinDetailsPage extends StatelessWidget {
                                 children: [
                                   Expanded(
                                     child: Text(
-                                      cryptocurrency.symbol,
+                                      currency.symbol,
                                       style: const TextStyle(
                                         fontWeight: FontWeight.bold,
                                         color:
@@ -74,14 +74,14 @@ class CoinDetailsPage extends StatelessWidget {
                                   ),
                                   Expanded(
                                     child: Text(
-                                      cryptocurrency.cotation,
+                                      currency.cotation,
                                       style:
                                           const TextStyle(color: Colors.green),
                                     ),
                                   ),
                                   Expanded(
                                     child: Text(
-                                      cryptocurrency.details.fee.toString(),
+                                      currency.details.fee.toString(),
                                       style:
                                           const TextStyle(color: Colors.green),
                                     ),
@@ -110,7 +110,7 @@ class CoinDetailsPage extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.only(top: 20, bottom: 20),
                           child: Text(
-                            cryptocurrency.details.about,
+                            currency.details.about,
                             textAlign: TextAlign.justify,
                             style: const TextStyle(fontSize: 18),
                           ),
