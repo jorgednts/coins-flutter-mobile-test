@@ -27,5 +27,4 @@ class WalletModel {
   set userBalance(String value) {
     _userBalance = value;
   }
-
 }

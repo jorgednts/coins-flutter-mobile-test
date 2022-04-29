@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../common/coins_constants_colors.dart';
 import '../../domain/model/currency_model.dart';
 import '../page/coin_details_page.dart';
+import 'coin_list_page_string_constants.dart';
 
 class CryptocurrencyListWidget extends StatelessWidget {
   const CryptocurrencyListWidget({
@@ -31,7 +32,7 @@ class CryptocurrencyListWidget extends StatelessWidget {
                 const Padding(
                   padding: EdgeInsets.all(10),
                   child: Text(
-                    'Criptomoedas:',
+                    LoginPageStringConstants.coinListCryptocurrencyText,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                     ),

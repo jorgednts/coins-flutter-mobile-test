@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'coin_list_page_string_constants.dart';
+
 class BalanceCardWidget extends StatelessWidget {
   const BalanceCardWidget({
     required this.userBalance,
@@ -30,7 +32,7 @@ class BalanceCardWidget extends StatelessWidget {
                   child: Padding(
                     padding: EdgeInsets.all(10),
                     child: Text(
-                      'Saldo Disponível:',
+                      LoginPageStringConstants.coinListUserBalanceText,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         // fontSize: 13,

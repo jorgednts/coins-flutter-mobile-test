@@ -48,7 +48,7 @@ class _LoginPageState extends State<LoginPage> {
               child: Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(top: 250, bottom: 20),
+                    padding: const EdgeInsets.only(top: 200, bottom: 20),
                     child: Image.asset(
                       LoginPageImageConstants.coinsLoginLogo,
                       width: 150,

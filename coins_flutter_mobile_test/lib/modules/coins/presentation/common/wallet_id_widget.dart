@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'coin_list_page_string_constants.dart';
+
 class WalletIdWidget extends StatelessWidget {
   const WalletIdWidget({
     required this.walletId,
@@ -27,7 +29,7 @@ class WalletIdWidget extends StatelessWidget {
                 const Padding(
                   padding: EdgeInsets.all(10),
                   child: Text(
-                    'Id da Carteira:',
+                    LoginPageStringConstants.coinListWalletIdText,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 13,

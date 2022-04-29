@@ -10,6 +10,7 @@ class CoinDetailsPage extends StatelessWidget {
   }) : super(key: key);
 
   final CurrencyModel currency;
+  static const detailsPageAboutText = 'Sobre:';
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -102,7 +103,7 @@ class CoinDetailsPage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const Text(
-                          'Sobre:',
+                          detailsPageAboutText,
                           style: TextStyle(
                               color: CoinsConstantsColors.primaryColor,
                               fontSize: 18),

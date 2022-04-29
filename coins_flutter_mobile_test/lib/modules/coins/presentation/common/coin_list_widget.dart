@@ -17,34 +17,22 @@ class CoinListWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) => SingleChildScrollView(
         child: Center(
-          child: Padding(
-            padding: const EdgeInsets.only(top: 50),
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Padding(
-                      padding: EdgeInsets.only(right: 10),
-                      child: Icon(
-                        Icons.account_circle_rounded,
-                        color: CoinsConstantsColors.primaryColor,
-                      ),
-                    ),
-                    Text(
-                      'Olá!',
-                      style: TextStyle(
-                        fontSize: 30,
-                        color: CoinsConstantsColors.primaryColor,
-                      ),
-                    )
-                  ],
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(bottom: 15),
+                child: Text(
+                  wallet.message,
+                  style: const TextStyle(
+                    fontSize: 30,
+                    color: CoinsConstantsColors.primaryColor,
+                  ),
                 ),
-                BalanceCardWidget(userBalance: wallet.userBalance),
-                WalletIdWidget(walletId: wallet.walletId),
-                CryptocurrencyListWidget(currencyList: wallet.data),
-              ],
-            ),
+              ),
+              BalanceCardWidget(userBalance: wallet.userBalance),
+              WalletIdWidget(walletId: wallet.walletId),
+              CryptocurrencyListWidget(currencyList: wallet.data),
+            ],
           ),
         ),
       );

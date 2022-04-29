@@ -7,6 +7,7 @@ import '../../data/repository/coin_repository_impl.dart';
 import '../../domain/repository/coin_repository.dart';
 import '../../domain/use_case/get_coin_use_case.dart';
 import '../../domain/use_case/get_coin_use_case_impl.dart';
+import '../common/coin_list_page_string_constants.dart';
 import '../common/coin_list_widget.dart';
 import '../controller/coin_list_controller.dart';
 import '../state/coin_list_state.dart';
@@ -36,6 +37,11 @@ class _CoinListPageState extends State<CoinListPage> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          foregroundColor: CoinsConstantsColors.primaryColor,
+        ),
         backgroundColor: CoinsConstantsColors.scaffoldBackground,
         body: ValueListenableBuilder<CoinListState>(
           valueListenable: coinListController,
@@ -46,7 +52,11 @@ class _CoinListPageState extends State<CoinListPage> {
               case CoinListState.success:
                 return CoinListWidget(wallet: coinListController.coin);
               case CoinListState.genericError:
-                return const Text('erro');
+                return const Padding(
+                  padding: EdgeInsets.only(top: 200),
+                  child:
+                      Text(LoginPageStringConstants.coinListGenericErrorText),
+                );
             }
           },
         ),
