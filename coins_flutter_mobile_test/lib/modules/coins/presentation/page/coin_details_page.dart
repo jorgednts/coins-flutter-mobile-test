@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../common/coins_constants_colors.dart';
 import '../../domain/model/currency_model.dart';
+import '../common/custom_about_info_widget.dart';
+import '../common/custom_detail_text_widget.dart';
 
 class CoinDetailsPage extends StatelessWidget {
   const CoinDetailsPage({
@@ -63,30 +65,17 @@ class CoinDetailsPage extends StatelessWidget {
                                   const EdgeInsets.only(top: 20, bottom: 10),
                               child: Column(
                                 children: [
-                                  Expanded(
-                                    child: Text(
-                                      currency.symbol,
-                                      style: const TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        color:
-                                            CoinsConstantsColors.primaryColor,
-                                      ),
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: Text(
-                                      currency.cotation,
-                                      style:
-                                          const TextStyle(color: Colors.green),
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: Text(
-                                      currency.details.fee.toString(),
-                                      style:
-                                          const TextStyle(color: Colors.green),
-                                    ),
-                                  ),
+                                  CustomDetailTextWidget(
+                                      detailText: currency.symbol,
+                                      textColor:
+                                          CoinsConstantsColors.primaryColor),
+                                  CustomDetailTextWidget(
+                                      detailText: currency.cotation,
+                                      textColor: Colors.green),
+                                  CustomDetailTextWidget(
+                                      detailText:
+                                          currency.details.fee.toString(),
+                                      textColor: Colors.green),
                                 ],
                               ),
                             ),
@@ -95,29 +84,9 @@ class CoinDetailsPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Container(
-                    padding: const EdgeInsets.only(top: 20),
-                    margin: const EdgeInsets.symmetric(horizontal: 20),
-                    width: MediaQuery.of(context).size.width,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text(
-                          detailsPageAboutText,
-                          style: TextStyle(
-                              color: CoinsConstantsColors.primaryColor,
-                              fontSize: 18),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 20, bottom: 20),
-                          child: Text(
-                            currency.details.about,
-                            textAlign: TextAlign.justify,
-                            style: const TextStyle(fontSize: 18),
-                          ),
-                        ),
-                      ],
-                    ),
+                  CustomAboutInfoWidget(
+                    detailsPageAboutText: detailsPageAboutText,
+                    aboutText: currency.details.about,
                   ),
                 ],
               ),
