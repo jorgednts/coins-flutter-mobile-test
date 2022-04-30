@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
-import 'modules/splash/presentation/page/splash_page.dart';
+import 'di/app_module.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ModularApp(
+      module: AppModule(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -13,6 +19,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) => const MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Coins Flutter Mobile Test',
-        home: SplashPage(),
-      );
+        initialRoute: '/',
+      ).modular();
 }

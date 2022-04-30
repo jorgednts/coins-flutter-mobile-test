@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../../auth/presentation/page/login_page.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class SplashController {
   Future<void> goToLoginModule(BuildContext context) async {
@@ -8,11 +7,6 @@ class SplashController {
       const Duration(seconds: 3),
     );
 
-    await Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const LoginPage(),
-      ),
-    );
+    Modular.to.navigate('/auth/');
   }
 }

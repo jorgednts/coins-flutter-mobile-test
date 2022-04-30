@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
-import '../../../coins/presentation/page/coin_list_page.dart';
 import '../../../common/coins_constants_colors.dart';
 import '../../constants/login_page_image_constants.dart';
 import '../../constants/login_page_string_constants.dart';
 import '../../domain/model/user_model.dart';
-import '../../domain/use_case/verify_login_use_case.dart';
 import '../common/custom_text_field_widget.dart';
 import '../common/info_text_widget.dart';
-import '../controller/login_page_controller.dart';
+import '../controller/login_controller.dart';
 import '../state/login_page_state.dart';
 
 class LoginPage extends StatefulWidget {
@@ -18,21 +17,16 @@ class LoginPage extends StatefulWidget {
   State<LoginPage> createState() => _LoginPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
-  late VerifyLoginUseCase verifyLoginUseCase;
-  late LoginPageController loginPageController;
+class _LoginPageState extends ModularState<LoginPage, LoginController> {
   TextEditingController userEmail = TextEditingController();
   TextEditingController userPassword = TextEditingController();
 
   @override
   void initState() {
     super.initState();
-    verifyLoginUseCase = VerifyLoginUseCaseImpl();
-    loginPageController = LoginPageController(
-      verifyLoginUseCase: verifyLoginUseCase,
-    );
-    loginPageController.addListener(() {
-      if (loginPageController.value == LoginPageState.successLogin) {
+
+    controller.addListener(() {
+      if (controller.value == LoginPageState.successLogin) {
         _goToCoinListPage(context);
       }
     });
@@ -109,7 +103,7 @@ class _LoginPageState extends State<LoginPage> {
                             email: userEmail.text.toString(),
                             password: userPassword.text.toString(),
                           );
-                          loginPageController.doLogin(user);
+                          controller.doLogin(user);
                         },
                         child: const Text(
                           LoginPageStringConstants.elevatedButtonLogin,
@@ -121,7 +115,7 @@ class _LoginPageState extends State<LoginPage> {
                   Padding(
                     padding: const EdgeInsets.only(top: 20),
                     child: ValueListenableBuilder<LoginPageState>(
-                        valueListenable: loginPageController,
+                        valueListenable: controller,
                         builder: (context, state, _) {
                           switch (state) {
                             case LoginPageState.initialState:
@@ -160,17 +154,12 @@ class _LoginPageState extends State<LoginPage> {
     await Future.delayed(
       const Duration(seconds: 1),
     );
-    await Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const CoinListPage(),
-      ),
-    );
+    Modular.to.navigate('/coins/');
   }
 
   @override
   void dispose() {
-    loginPageController.dispose();
+    controller.dispose();
     super.dispose();
   }
 }
