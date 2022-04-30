@@ -1,4 +1,3 @@
-import 'package:coins_flutter_mobile_test/modules/coins/presentation/common/custom_shimmer_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../../../common/coins_constants_colors.dart';
@@ -10,6 +9,7 @@ import '../../domain/use_case/get_coin_use_case.dart';
 import '../../domain/use_case/get_coin_use_case_impl.dart';
 import '../common/coin_list_page_string_constants.dart';
 import '../common/coin_list_widget.dart';
+import '../common/custom_shimmer_widget.dart';
 import '../controller/coin_list_controller.dart';
 import '../state/coin_list_state.dart';
 
@@ -49,7 +49,7 @@ class _CoinListPageState extends State<CoinListPage> {
           builder: (context, state, _) {
             switch (state) {
               case CoinListState.loading:
-                return CustomShimmerWidget();
+                return const CustomShimmerWidget();
               case CoinListState.success:
                 return CoinListWidget(wallet: coinListController.coin);
               case CoinListState.genericError:
