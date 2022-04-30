@@ -1,5 +1,6 @@
 import 'package:flutter_modular/flutter_modular.dart';
 
+import '../constants/coin_constants_routes.dart';
 import '../data/data_source/coins_data_source.dart';
 import '../data/data_source/coins_data_source_impl.dart';
 import '../data/repository/coin_repository_impl.dart';
@@ -30,11 +31,11 @@ class CoinsModule extends Module {
   @override
   List<ModularRoute> get routes => [
         ChildRoute(
-          '/',
+          CoinConstantsRoutes.coinListPage,
           child: (context, args) => const CoinListPage(),
         ),
         ChildRoute(
-          '/details/',
+          CoinConstantsRoutes.coinDetailsPage,
           child: (context, args) => CoinDetailsPage(currency: args.data),
         ),
       ];

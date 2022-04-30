@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 import '../../../common/coins_constants_colors.dart';
+import '../../constants/coin_constants_routes.dart';
 import '../../constants/coin_list_page_string_constants.dart';
 import '../../domain/model/currency_model.dart';
 
@@ -49,7 +50,8 @@ class CryptocurrencyListWidget extends StatelessWidget {
                     width: MediaQuery.of(context).size.width,
                     child: GestureDetector(
                       onTap: () {
-                        Modular.to.pushNamed('/coins/details/',
+                        Modular.to.pushNamed(
+                            CoinConstantsRoutes.coinDetails,
                             arguments: currencyList[index]);
                       },
                       child: Card(

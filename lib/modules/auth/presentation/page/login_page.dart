@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 import '../../../common/coins_constants_colors.dart';
+import '../../../common/coins_constants_routes.dart';
 import '../../constants/login_page_image_constants.dart';
 import '../../constants/login_page_string_constants.dart';
 import '../../domain/model/user_model.dart';
@@ -154,7 +155,7 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
     await Future.delayed(
       const Duration(seconds: 1),
     );
-    Modular.to.navigate('/coins/');
+    Modular.to.navigate(CoinsConstantsRoutes.coinsModule);
   }
 
   @override
