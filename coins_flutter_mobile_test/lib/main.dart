@@ -16,9 +16,10 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => const MaterialApp(
+  Widget build(BuildContext context) => MaterialApp.router(
         debugShowCheckedModeBanner: false,
         title: 'Coins Flutter Mobile Test',
-        initialRoute: '/',
-      ).modular();
+        routeInformationParser: Modular.routeInformationParser,
+        routerDelegate: Modular.routerDelegate,
+      );
 }

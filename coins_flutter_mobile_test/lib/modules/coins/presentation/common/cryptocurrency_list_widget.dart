@@ -49,7 +49,8 @@ class CryptocurrencyListWidget extends StatelessWidget {
                     width: MediaQuery.of(context).size.width,
                     child: GestureDetector(
                       onTap: () {
-                        Modular.to.navigate('/coins/details/', arguments: currencyList[index]);
+                        Modular.to.pushNamed('/coins/details/',
+                            arguments: currencyList[index]);
                       },
                       child: Card(
                         color: CoinsConstantsColors.primaryColor,
