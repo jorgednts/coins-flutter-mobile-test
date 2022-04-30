@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
+import '../../../../generated/l10n.dart';
 import '../../../common/coins_constants_colors.dart';
-import '../../constants/coin_list_page_string_constants.dart';
 import '../common/coin_list_widget.dart';
 import '../common/custom_shimmer_widget.dart';
 import '../controller/coin_list_controller.dart';
@@ -40,10 +40,9 @@ class _CoinListPageState
               case CoinListState.success:
                 return CoinListWidget(wallet: controller.coin);
               case CoinListState.genericError:
-                return const Padding(
-                  padding: EdgeInsets.only(top: 200),
-                  child:
-                      Text(LoginPageStringConstants.coinListGenericErrorText),
+                return Padding(
+                  padding: const EdgeInsets.only(top: 200),
+                  child: Text(S.of(context).coinListPageGenericErrorText),
                 );
             }
           },

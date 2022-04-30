@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../constants/coin_list_page_string_constants.dart';
+import '../../../../generated/l10n.dart';
 
 class WalletIdWidget extends StatelessWidget {
   const WalletIdWidget({
@@ -26,11 +26,11 @@ class WalletIdWidget extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Padding(
-                  padding: EdgeInsets.all(10),
+                Padding(
+                  padding: const EdgeInsets.all(10),
                   child: Text(
-                    LoginPageStringConstants.coinListWalletIdText,
-                    style: TextStyle(
+                    S.of(context).coinListPageWalletIdText,
+                    style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 13,
                     ),

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
+import '../../../../generated/l10n.dart';
 import '../../../common/coins_constants_colors.dart';
 import '../../../common/coins_constants_routes.dart';
 import '../../constants/login_page_image_constants.dart';
-import '../../constants/login_page_string_constants.dart';
 import '../../domain/model/user_model.dart';
 import '../common/custom_text_field_widget.dart';
 import '../common/info_text_widget.dart';
@@ -64,7 +64,7 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
                         ),
                         CustomTextFieldWidget(
                           textEditingController: userEmail,
-                          hintText: LoginPageStringConstants.textFieldEmail,
+                          hintText: S.of(context).loginPageEmail,
                         ),
                       ],
                     ),
@@ -85,7 +85,7 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
                         CustomTextFieldWidget(
                           obscureText: true,
                           textEditingController: userPassword,
-                          hintText: LoginPageStringConstants.textFieldPassword,
+                          hintText: S.of(context).loginPagePassword,
                         ),
                       ],
                     ),
@@ -106,9 +106,9 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
                           );
                           controller.doLogin(user);
                         },
-                        child: const Text(
-                          LoginPageStringConstants.elevatedButtonLogin,
-                          style: TextStyle(fontSize: 18),
+                        child: Text(
+                          S.of(context).loginPageLogin,
+                          style: const TextStyle(fontSize: 18),
                         ),
                       ),
                     ),
@@ -120,30 +120,33 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
                         builder: (context, state, _) {
                           switch (state) {
                             case LoginPageState.initialState:
-                              return const InfoTextWidget(
+                              return InfoTextWidget(
                                 infoText:
-                                    LoginPageStringConstants.infoTextInitState,
+                                    S.of(context).loginPageInfoTextInitState,
                               );
                             case LoginPageState.credentialError:
-                              return const InfoTextWidget(
-                                infoText: LoginPageStringConstants
-                                    .infoTextCredentialError,
+                              return InfoTextWidget(
+                                infoText: S
+                                    .of(context)
+                                    .loginPageInfoTextCredentialError,
                               );
                             case LoginPageState.successLogin:
-                              return const InfoTextWidget(
-                                  infoText: LoginPageStringConstants
-                                      .infoTextSuccessfulLogin);
+                              return InfoTextWidget(
+                                  infoText: S
+                                      .of(context)
+                                      .loginPageInfoTextSuccessfulLogin);
                             case LoginPageState.loading:
-                              return const InfoTextWidget(
+                              return InfoTextWidget(
                                   infoText:
-                                      LoginPageStringConstants.infoTextLoading);
+                                      S.of(context).loginPageInfoTextLoading);
                             case LoginPageState.emptyCredential:
-                              return const InfoTextWidget(
-                                  infoText: LoginPageStringConstants
-                                      .infoTextEmptyCredential);
+                              return InfoTextWidget(
+                                  infoText: S
+                                      .of(context)
+                                      .loginPageInfoTextEmptyCredential);
                           }
                         }),
-                  )
+                  ),
                 ],
               ),
             ),

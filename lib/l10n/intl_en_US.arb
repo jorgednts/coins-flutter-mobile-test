@@ -1,0 +1,16 @@
+{
+  "@@locale": "en_US",
+  "loginPageEmail": "e-mail",
+  "loginPagePassword": "password",
+  "loginPageLogin": "LOGIN",
+  "loginPageInfoTextInitState": "Welcome!",
+  "loginPageInfoTextCredentialError": "Invalid credentials, try again!",
+  "loginPageInfoTextSuccessfulLogin": "Successful login!",
+  "loginPageInfoTextLoading": "Loading...",
+  "loginPageInfoTextEmptyCredential": "Fill in all fields!",
+  "coinListPageGenericErrorText": "AN ERROR HAS OCCURED :(",
+  "coinListPageUserBalanceText": "Balance:",
+  "coinListPageWalletIdText": "Wallet ID:",
+  "coinListPageCryptocurrencyText": "Cryptocurrencies:",
+  "coinDetailsPageAboutText": "About:"
+}

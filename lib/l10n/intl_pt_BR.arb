@@ -1,0 +1,16 @@
+{
+  "@@locale": "pt_BR",
+  "loginPageEmail": "e-mail",
+  "loginPagePassword": "senha",
+  "loginPageLogin": "ENTRAR",
+  "loginPageInfoTextInitState": "Bem-vind@!",
+  "loginPageInfoTextCredentialError": "Credenciais Inválidas, tente novamente!",
+  "loginPageInfoTextSuccessfulLogin": "Login realizado com sucesso!",
+  "loginPageInfoTextLoading": "Carregando...",
+  "loginPageInfoTextEmptyCredential": "Preencha todos os campos!",
+  "coinListPageGenericErrorText": "OCORREU UM ERRO :(",
+  "coinListPageUserBalanceText": "Saldo Disponível:",
+  "coinListPageWalletIdText": "ID da Carteira:",
+  "coinListPageCryptocurrencyText": "Cryptomoedas:",
+  "coinDetailsPageAboutText": "Sobre:"
+}

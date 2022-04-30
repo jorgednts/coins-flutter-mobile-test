@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../generated/l10n.dart';
 import '../../../common/coins_constants_colors.dart';
 import '../../domain/model/currency_model.dart';
 import '../common/custom_about_info_widget.dart';
@@ -12,7 +13,6 @@ class CoinDetailsPage extends StatelessWidget {
   }) : super(key: key);
 
   final CurrencyModel currency;
-  static const detailsPageAboutText = 'Sobre:';
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -30,7 +30,8 @@ class CoinDetailsPage extends StatelessWidget {
                 children: [
                   CustomCurrencyDetailsPageCardWidget(currency: currency),
                   CustomAboutInfoWidget(
-                    detailsPageAboutText: detailsPageAboutText,
+                    detailsPageAboutText:
+                        S.of(context).coinDetailsPageAboutText,
                     aboutText: currency.details.about,
                   ),
                 ],

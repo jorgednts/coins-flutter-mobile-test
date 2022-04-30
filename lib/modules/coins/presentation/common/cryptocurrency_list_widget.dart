@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
+import '../../../../generated/l10n.dart';
 import '../../../common/coins_constants_colors.dart';
 import '../../constants/coin_constants_routes.dart';
-import '../../constants/coin_list_page_string_constants.dart';
 import '../../domain/model/currency_model.dart';
 
 class CryptocurrencyListWidget extends StatelessWidget {
@@ -30,11 +30,11 @@ class CryptocurrencyListWidget extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Padding(
-                  padding: EdgeInsets.all(10),
+                Padding(
+                  padding: const EdgeInsets.all(10),
                   child: Text(
-                    LoginPageStringConstants.coinListCryptocurrencyText,
-                    style: TextStyle(
+                    S.of(context).coinListPageCryptocurrencyText,
+                    style: const TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
                   ),

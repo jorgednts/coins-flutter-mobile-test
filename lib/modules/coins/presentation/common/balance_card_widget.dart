@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../constants/coin_list_page_string_constants.dart';
+import '../../../../generated/l10n.dart';
 
 class BalanceCardWidget extends StatelessWidget {
   const BalanceCardWidget({
@@ -27,15 +27,15 @@ class BalanceCardWidget extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Expanded(
+                Expanded(
                   flex: 3,
                   child: Padding(
-                    padding: EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(10),
                     child: Text(
-                      LoginPageStringConstants.coinListUserBalanceText,
-                      style: TextStyle(
+                      S.of(context).coinListPageUserBalanceText,
+                      style: const TextStyle(
                         fontWeight: FontWeight.bold,
-                        // fontSize: 13,
+                        fontSize: 13,
                       ),
                     ),
                   ),
