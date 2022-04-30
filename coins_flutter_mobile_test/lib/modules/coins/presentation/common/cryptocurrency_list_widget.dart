@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 import '../../../common/coins_constants_colors.dart';
+import '../../constants/coin_list_page_string_constants.dart';
 import '../../domain/model/currency_model.dart';
-import '../page/coin_details_page.dart';
-import 'coin_list_page_string_constants.dart';
 
 class CryptocurrencyListWidget extends StatelessWidget {
   const CryptocurrencyListWidget({
@@ -49,12 +49,8 @@ class CryptocurrencyListWidget extends StatelessWidget {
                     width: MediaQuery.of(context).size.width,
                     child: GestureDetector(
                       onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => CoinDetailsPage(
-                                      currency: currencyList[index],
-                                    )));
+                        Modular.to.pushNamed('/coins/details/',
+                            arguments: currencyList[index]);
                       },
                       child: Card(
                         color: CoinsConstantsColors.primaryColor,

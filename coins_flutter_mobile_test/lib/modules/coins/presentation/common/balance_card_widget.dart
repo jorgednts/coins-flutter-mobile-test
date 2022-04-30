@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'coin_list_page_string_constants.dart';
+import '../../constants/coin_list_page_string_constants.dart';
 
 class BalanceCardWidget extends StatelessWidget {
   const BalanceCardWidget({
