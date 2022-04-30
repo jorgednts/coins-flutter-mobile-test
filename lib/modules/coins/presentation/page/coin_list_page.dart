@@ -40,10 +40,13 @@ class _CoinListPageState
               case CoinListState.success:
                 return CoinListWidget(wallet: controller.coin);
               case CoinListState.genericError:
-                return const Padding(
-                  padding: EdgeInsets.only(top: 200),
-                  child:
-                      Text(LoginPageStringConstants.coinListGenericErrorText),
+                return const Center(
+                  child: Text(
+                    LoginPageStringConstants.coinListGenericErrorText,
+                    style: TextStyle(
+                        color: CoinsConstantsColors.primaryColor,
+                        fontWeight: FontWeight.bold),
+                  ),
                 );
             }
           },
