@@ -35,7 +35,7 @@ class BalanceCardWidget extends StatelessWidget {
                       LoginPageStringConstants.coinListUserBalanceText,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        // fontSize: 13,
+                        fontSize: 13,
                       ),
                     ),
                   ),
